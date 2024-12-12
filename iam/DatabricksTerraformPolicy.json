@@ -1,0 +1,60 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:*",
+                "s3:*",
+                "vpce:*",
+                "kms:*",
+                "cloudwatch:*",
+                "logs:*",
+                "elasticloadbalancing:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:GetRole",
+                "iam:ListRoles",
+                "iam:PutRolePolicy",
+                "iam:GetRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:ListRolePolicies",
+                "iam:UpdateRole",
+                "iam:UpdateRoleDescription",
+                "iam:ListInstanceProfiles",
+                "iam:CreateInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "iam:AddRoleToInstanceProfile",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:GetInstanceProfile",
+                "iam:TagRole",
+                "iam:TagInstanceProfile",
+                "iam:PassRole",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListInstanceProfilesForRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::727646499990:role/cnvg-*",
+                "arn:aws:iam::727646499990:instance-profile/cnvg-*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "arn:aws:iam::*:role/aws-service-role/spot.amazonaws.com/AWSServiceRoleForEC2Spot",
+            "Condition": {
+                "StringLike": {
+                    "iam:AWSServiceName": "spot.amazonaws.com"
+                }
+            }
+        }
+    ]
+}
