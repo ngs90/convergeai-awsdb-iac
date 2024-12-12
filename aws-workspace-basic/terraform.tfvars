@@ -6,5 +6,5 @@ tags = {
   Platform    = "aws"
 }
 cidr_block = "10.4.0.0/16"
-region = "eu-central-1"
-prefix = "cnvg"
+region     = "eu-central-1"
+prefix     = "cnvg"
