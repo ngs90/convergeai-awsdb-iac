@@ -9,7 +9,8 @@ aws iam create-policy \
     --user-name iam-terraform-databricks-deployer \
     --policy-arn arn:aws:iam::YOUR_ACCOUNT_ID:policy/DatabricksTerraformPolicy
 
-terraform init
+terraform init -backend-config="bucket=cnvg-tf-rootbucket" -backend-config="key=databr
+icks/terraform.tfstate" -backend-config="region=eu-central-1"
 terraform validate
 terraform plan
 
@@ -20,3 +21,6 @@ Get-Content .env | ForEach-Object {
 }
 
 Get-ChildItem Env:TF_VAR_*
+
+
+
