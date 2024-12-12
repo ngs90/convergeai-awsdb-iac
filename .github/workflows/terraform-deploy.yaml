@@ -28,6 +28,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: aws-workspace-basic
 
     steps:
     - name: Checkout
