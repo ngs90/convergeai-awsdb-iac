@@ -1,6 +1,9 @@
 Based on the AWS Databricks Terraform basic module: 
 * https://github.com/databricks/terraform-databricks-examples/tree/main/modules/aws-workspace-basic 
- 
+
+The `terraform-deploy.yaml` creates a databricks workspace and the `terraform-destroy.yaml` destroy/deletes the workspace again using GitHub action workflows.
+
+The below environmental variables needs to be set to run the pipelines.
 
 ### Environment Variables
 
