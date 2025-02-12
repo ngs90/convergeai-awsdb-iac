@@ -1,13 +1,27 @@
-aws iam create-user --user-name iam-terraform-databricks-deployer
-aws iam create-access-key --user-name iam-terraform-databricks-deployer
+aws iam create-user --user-name convg-iam-terraform-databricks-deployer
+aws iam create-access-key --user-name convg-iam-terraform-databricks-deployer
 
 aws iam create-policy \
-    --policy-name DatabricksTerraformPolicy \
+    --policy-name convg-DatabricksTerraformPolicy \
     --policy-document file://databricks-terraform-policy.json
 
     aws iam attach-user-policy \
     --user-name iam-terraform-databricks-deployer \
     --policy-arn arn:aws:iam::YOUR_ACCOUNT_ID:policy/DatabricksTerraformPolicy
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
 
 terraform init -backend-config="bucket=cnvg-tf-rootbucket" -backend-config="key=databr
 icks/terraform.tfstate" -backend-config="region=eu-central-1"
