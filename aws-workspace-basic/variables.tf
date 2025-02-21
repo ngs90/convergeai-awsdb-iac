@@ -40,13 +40,13 @@ variable "databricks_client_secret" {
 variable "policy_overrides" {
   description = "Overrides for the default compute policy"
   type = map(object({
-    type          = string
-    minValue      = optional(number)
-    maxValue      = optional(number)
-    defaultValue  = optional(number)
-    values        = optional(list(string))
-    value         = optional(string)
-    hidden        = optional(bool)
+    type         = string
+    minValue     = optional(number)
+    maxValue     = optional(number)
+    defaultValue = optional(number)
+    values       = optional(list(string))
+    value        = optional(string)
+    hidden       = optional(bool)
   }))
   default = {}
 }
