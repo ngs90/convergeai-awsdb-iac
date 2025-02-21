@@ -41,7 +41,7 @@ resource "databricks_mws_workspaces" "this" {
 }
 
 data "databricks_mws_workspaces" "this" {
-  provider = databricks.account
-  depends_on = [ databricks_mws_workspaces.this ]
+  provider   = databricks.account
+  depends_on = [databricks_mws_workspaces.this]
 }
 
