@@ -39,15 +39,6 @@ variable "databricks_client_secret" {
 
 variable "small_compute_policy" {
   description = "Overrides for the default compute policy"
-  type = map(object({
-    type         = string
-    minValue     = optional(number)
-    maxValue     = optional(number)
-    defaultValue = optional(number)
-    values       = optional(list(string))
-    value        = optional(string)
-    hidden       = optional(bool)
-  }))
   default = {}
 }
 
