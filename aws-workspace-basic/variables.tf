@@ -37,7 +37,7 @@ variable "databricks_client_secret" {
   description = "DB client secret"
 }
 
-variable "policy_overrides" {
+variable "small_compute_policy" {
   description = "Overrides for the default compute policy"
   type = map(object({
     type         = string
