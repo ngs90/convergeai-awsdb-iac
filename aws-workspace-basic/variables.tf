@@ -39,7 +39,7 @@ variable "databricks_client_secret" {
 
 variable "small_compute_policy" {
   description = "Overrides for the default compute policy"
-  default = {}
+  default     = {}
 }
 
 
