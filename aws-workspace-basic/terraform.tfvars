@@ -8,3 +8,20 @@ tags = {
 cidr_block = "10.4.0.0/16"
 region     = "eu-central-1"
 prefix     = "cnvg"
+
+policy_overrides = {
+  num_workers = {
+    type         = "range"
+    minValue     = 2
+    defaultValue = 2
+  }
+  autotermination_minutes = {
+    type         = "range"
+    maxValue     = 45
+    defaultValue = 30
+  }
+  node_type_id = {
+    type   = "allowlist"
+    values = ["i3.xlarge", "g4dn.xlarge"]
+  }
+}

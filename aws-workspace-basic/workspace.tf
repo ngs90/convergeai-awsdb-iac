@@ -40,35 +40,3 @@ resource "databricks_mws_workspaces" "this" {
   }
 }
 
-
-resource "databricks_compute_policy" "default_policy" {
-  workspace_id = databricks_mws_workspaces.this.workspace_id
-  name         = "Default Compute Policy"
-
-  definition = jsonencode({
-    "custom_tags" : {
-      "Policy Managed" : "true"
-    },
-    "instance_pool_id" : {
-      "type" : "any"
-    },
-    "num_workers" : {
-      "type" : "range",
-      "min" : 0
-    },
-    "spark_version" : {
-      "type" : "any"
-    },
-    "node_type_id" : {
-      "type" : "any"
-    },
-    "autotermination_minutes" : {
-      "type" : "fixed",
-      "value" : 30
-    },
-    "dbus_per_hour" : {
-      "type" : "range",
-      "maxValue" : 2
-    }
-  })
-}
