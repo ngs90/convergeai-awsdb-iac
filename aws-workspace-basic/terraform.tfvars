@@ -9,7 +9,7 @@ cidr_block = "10.4.0.0/16"
 region     = "eu-central-1"
 prefix     = "cnvg"
 
-policy_overrides = {
+small_compute_policy = {
   num_workers = {
     type         = "range"
     minValue     = 2

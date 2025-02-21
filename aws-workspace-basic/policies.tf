@@ -87,6 +87,5 @@ locals {
 resource "databricks_compute_policy" "small_compute_policy" {
   workspace_id = databricks_mws_workspaces.this.workspace_id
   name         = "Small Compute Policy"
-
-  definition = jsonencode(merge(locals.default_policy, var.policy_overrides))
+  definition   = jsonencode(merge(locals.default_policy, var.small_compute_policy))
 }
